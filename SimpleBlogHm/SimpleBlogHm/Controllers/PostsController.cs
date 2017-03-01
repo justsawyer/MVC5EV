@@ -10,7 +10,7 @@ namespace SimpleBlogHm.Controllers
     {
         public ActionResult Index()
         {
-            return Content("AnaSayfa");
+            return View();
         }
     }
 }
