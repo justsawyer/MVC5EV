@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimpleBlogHm.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +14,12 @@ namespace SimpleBlogHm.Controllers
         public ActionResult Login()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(AuthLogin form)
+        {
+            return Content("Hi "+form.Username+ " your password ="+form.Password);
         }
 	}
 }

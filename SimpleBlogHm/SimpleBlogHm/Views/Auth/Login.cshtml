@@ -1,48 +1,30 @@
-﻿
+﻿@model SimpleBlogHm.ViewModels.AuthLogin
+
 @{
-    Layout = null;
+    ViewBag.Title = "LoginPage";
+
 }
 
-<!DOCTYPE html>
+<h1>This is LoginPage</h1>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Login</title>
-    <style >
+@*<form method="post">
+    <input type="text" name="Username" />
+    <input type="password" name="Password" />
+    <input type="submit" value="Login" />
+</form>*@
 
 
-        input[name="btn_submit"] {
-            color: #ffffff;
-            background-color: #9c9b9b;
-            padding: 10px;
-            border: 1px solid #ffffff;
-        }
-        input[name="btn_submit"]:hover {
-         
-            background-color: #636161;
-          
-        }
-        input[name="username"]{
-            padding:3px;
-        }
-        input[name="password"] {
-            padding: 3px;
-        }
-    </style>
-</head>
-<body style="background-color:#279393">
-    <div> 
-        <h1>Login</h1>
-         <form action="/" method="post">
-             <fieldset>
-                 <legend>Login</legend>
-                 UserName:<br /><input type="text" name="username" placeholder="Kullanı Adı"/><br />
-                 Password:<br /><input type="password" name="password" placeholder="Şifre" /><br />
-                 <br />
-                 <input type="submit" name="btn_submit" value="Giriş Yap" />
-             </fieldset>
-         </form>
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.LabelFor(x => x.Username)
+        @Html.EditorFor(x => x.Username)
     </div>
-</body>
-</html>
+    <div>
+        @Html.LabelFor(x => x.Password)
+        @Html.EditorFor(x => x.Password)
+    </div>
+    <div>
+        <input type="submit" value="Login" />
+    </div>
+}
